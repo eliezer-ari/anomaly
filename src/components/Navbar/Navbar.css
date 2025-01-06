@@ -1,0 +1,33 @@
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+
+    width: 100vw;
+    height: 5vh;
+
+    top: 0;
+    
+    position: fixed;
+    z-index: 100;
+    padding: 5px 15px ;
+
+    background-color: none;
+
+}
+
+.navbar-container.active {
+
+transition: all 0.25s ease-in;
+}
+
+.navbar-container img{
+    filter: invert(0);
+    transition: all 0.25s ease-in;
+    height: 100%;
+    width: auto;
+}
+.navbar-container.active img{
+    filter: invert(1);
+    transition: all 0.25s ease-in;
+}
+
