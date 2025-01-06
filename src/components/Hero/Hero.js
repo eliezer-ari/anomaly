@@ -11,6 +11,7 @@ export default function Hero(){
     return(
         <div className='standard-container hero-container'>
                     <Generative />
+                    {/* peenis */}
                 
         </div>
     )
