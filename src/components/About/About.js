@@ -6,6 +6,9 @@ export default function About(){
         <div className='standard-container about'>
             <div className='about-container'>
                 {/* <h1>PAST WORK</h1> */}
+                <a href="https://keeping-it-simple-staging.netlify.app/" target="_blank" rel="noopener noreferrer">
+                   <div className="shape hexagon"></div>
+                </a>
                 <a href="https://ariroseman.com" target="_blank" rel="noopener noreferrer">
                    <div className="shape triangle"></div>
                 </a>
@@ -18,9 +21,7 @@ export default function About(){
                 <a href="https://www.austinmahone.com" target="_blank" rel="noopener noreferrer">
                    <div className="shape pentagon"></div>
                 </a>
-                <a href="https://keeping-it-simple-staging.netlify.app/" target="_blank" rel="noopener noreferrer">
-                   <div className="shape hexagon"></div>
-                </a>
+         
             </div>
         </div>
     )
