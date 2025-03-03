@@ -17,22 +17,15 @@ export default function Home() {
     <div>
       <Loading/>
       <Navbar/>
-      <ParallaxProvider>
         <div className='parallax-container'>
-          <Parallax speed={-20}>
             <Hero />
-          </Parallax>
-          <Parallax speed={10}>
             <About /> 
-          </Parallax>
+            {/* <Contact/> */}
+
         </div>
-        
-        
-      </ParallaxProvider>
-      
-      <Work/>
-      {/* <Contact/> */}
-      <Footer/>
+              
+      {/* <Work/> */}
+      {/* <Footer/> */}
     </div>
   );
 }

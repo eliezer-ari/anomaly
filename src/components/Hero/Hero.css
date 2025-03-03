@@ -14,6 +14,20 @@
 
     bottom: 0;
 }
-.hero-container{
-    
+
+
+
+/* src/components/Hero/Hero.css */
+.hero-text-container.overlay {
+    position: relative; /* Change to relative positioning */
+    margin: auto; /* Center horizontally */
+    width: 100%; /* Full width */
+    text-align: center; /* Center the text */
+    color: white; /* Change text color for visibility */
+    /* Add any additional styles you need */
+}
+
+.hero-text-container.overlay h1{
+    width: 80vw;
+
 }

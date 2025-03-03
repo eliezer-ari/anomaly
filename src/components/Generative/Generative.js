@@ -183,7 +183,7 @@ const Generative = () => {
   }, [seed]);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
+    <div style={{ width: '100vw', height: '100vh', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div ref={mountRef} style={{ width: '100%', height: '100%' }} />
       {seed && (
         <div
@@ -199,9 +199,11 @@ const Generative = () => {
             // opacity: '75%',
           }}
         >
-          SEED: {seed}
+          {/* Test */}
+          {/* SEED: {seed} */}
         </div>
       )}
+     
     </div>
   );
 };

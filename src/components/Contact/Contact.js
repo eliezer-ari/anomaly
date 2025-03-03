@@ -81,7 +81,7 @@ export default function Contact(){
         
     }
     return(
-        <div className="standard-container" >
+        <div className="standard-container contact" >
              <form className="form" ref={form} onSubmit={sendEmail}>
                 <div className="grid-item large form-inputs-container">
                     <label className="name-input">
