@@ -107,7 +107,7 @@ const Generative = () => {
 
     // Create multiple shape sources
     for (let i = 0; i < numSources; i++) {
-      const shapeType = ['grid', 'sphere', 'cube', 'cylinder', 'disk'][Math.floor(rng(0, 5))];
+      const shapeType = ['grid', 'sphere', 'cube', 'cylinder', 'disk'][Math.floor(rng(1, 3))];
       const spread = rng(20, 50); // Random spread for each source
       const particleCount = Math.floor(rng(10000, 50000)); // Random particle count per source
 
@@ -196,10 +196,10 @@ const Generative = () => {
             fontFamily: '"Sen", sans-serif',
             padding: '5px 10px',
             pointerEvents: 'none',
-            // opacity: '75%',
+            opacity: '50%',
           }}
         >
-          {/* SEED: {seed} */}
+          SEED: {seed}
         </div>
       )}
     </div>
