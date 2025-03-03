@@ -1,3 +1,73 @@
 .standard-container.about{
-    background-color: white;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+}
+
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: 80%
+}
+
+@media (max-width: 960px) {
+    .about-container{
+        flex-direction: column;
+    }
+}
+
+.about-container h1 {
+    margin: 2rem;
+}
+
+.shape{
+ margin: 1rem;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid lightcoral;
+}
+
+.pentagon {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid lightgoldenrodyellow; /* Adjust this value for height */
+    position: relative;
+}
+
+.pentagon:before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid lightgoldenrodyellow; /* Adjust this value for the top triangle */
 }

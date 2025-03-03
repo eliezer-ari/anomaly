@@ -19,20 +19,16 @@ export default function Home() {
       <Navbar/>
       <ParallaxProvider>
         <div className='parallax-container'>
-          <Parallax speed={-20}>
             <Hero />
-          </Parallax>
-          <Parallax speed={10}>
             <About /> 
-          </Parallax>
         </div>
         
         
       </ParallaxProvider>
       
-      <Work/>
+      {/* <Work/> */}
       {/* <Contact/> */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

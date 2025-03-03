@@ -199,7 +199,7 @@ const Generative = () => {
             // opacity: '75%',
           }}
         >
-          SEED: {seed}
+          {/* SEED: {seed} */}
         </div>
       )}
     </div>
