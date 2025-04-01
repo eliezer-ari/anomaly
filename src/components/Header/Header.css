@@ -26,7 +26,7 @@ transition: all 0.25s ease-in;
     height: 100%;
     width: auto;
 }
-.navbar-container.active img{
+.navbar-container.invert img{
     filter: invert(1);
     transition: all 0.25s ease-in;
 }

@@ -1,0 +1,153 @@
+.standard-container.contact {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    padding: clamp(2rem, 5vw, 10rem);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;    
+    width: 80%;
+}   
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    width: 100%;
+}
+
+.contact-form h1 {
+    color: black;
+}
+
+.contact-form p {
+    color: black;
+}
+
+
+.contact-container form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    width: 100%;
+}
+
+.contact-container .email-section {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+}
+
+.contact-container .message-section {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+}
+
+.contact-container h1 {
+	width: 100%; /* Changed from fixed width */
+	max-width: 100%; /* Changed from 80vw */
+	text-align: left;
+	margin: 0;
+    margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+	font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.contact-container p {
+	color: black;
+    margin-bottom: clamp(1.5rem, 5vw, 3rem);
+}
+
+.contact-container input {
+	width: 100%;
+	height: clamp(1.75rem, 5vh, 2rem);
+	padding-block: 0;
+	padding-inline: 0;
+	border-width: 0;
+	border-style: none;
+    border: 1px solid #00000041;
+	border-image: none;
+	-webkit-appearance: none; /* Removes default styling on iOS */
+	border-radius: 0;
+	padding-left: clamp(0.5rem, 2vw, 1rem);
+	padding-top: clamp(0.2rem, 1vh, 0.3rem);
+	padding-bottom: clamp(0.2rem, 1vh, 0.3rem);
+	-webkit-text-size-adjust: 100%; /* Prevents automatic zoom on iOS */
+	font-size: clamp(14px, 2vw, 16px);
+	outline: none; /* Removes the default focus outline */
+}
+
+.contact-container textarea {
+	width: 100%;
+	height: clamp(8rem, 20vh, 10rem);
+	padding-block: 0;
+	padding-inline: 0;
+	border-width: 0;
+	border-style: none;
+	border-color: #fff;
+	border-image: none;
+	-webkit-appearance: none; /* Removes default styling on iOS */
+	border-radius: 0;
+    border: 1px solid #00000041;
+	padding-left: clamp(0.5rem, 2vw, 1rem);
+	padding-top: clamp(0.5rem, 2vh, 0.8rem);
+	padding-bottom: clamp(0.2rem, 1vh, 0.3rem);
+	-webkit-text-size-adjust: 100%; /* Prevents automatic zoom on iOS */
+	font-size: clamp(14px, 2vw, 16px);
+	resize: none; /* Disables resizing */
+	overflow: auto; /* Allows scroll if content overflows */
+	outline: none; /* Removes the default focus outline */
+}
+
+.contact-container input:placeholder-shown {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.contact-container textarea:placeholder-shown {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.contact-container button {
+	width: 100%;
+	height: clamp(1.75rem, 5vh, 2rem);
+	font-family: "Sen", sans-serif;
+    border-radius: 5px;
+	background-color: #000;
+	padding-block: 0;
+	padding-inline: 0;
+	border-width: 0;
+	border-style: none;
+	border-color: #fff;
+	border-image: none;
+	cursor: pointer;
+	color: #fff;
+	outline: none; /* Removes the default focus outline */
+	font-size: clamp(14px, 2vw, 16px);
+}
+
+.contact-container button:hover {
+	color: #fff;
+}
+
+.contact-container button:active {
+	background-color: #a3a3a3;
+	color: #000;
+	transition: ease-in-out 50ms;
+}
+
+@media (max-width: 960px) {
+	.contact-container {
+		padding-top: clamp(2rem, 8vw, 4rem);
+		padding-bottom: clamp(2rem, 8vw, 4rem);
+	}
+}
