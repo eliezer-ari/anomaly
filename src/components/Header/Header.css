@@ -1,23 +1,21 @@
 .navbar-container {
     display: flex;
     flex-direction: row;
-
     width: 100vw;
     height: 5vh;
-
-    top: 0;
-    
+    top: 0; 
     position: fixed;
     z-index: 100;
-    padding: 5px 15px ;
-
+    padding: 5px 15px;
     background-color: none;
+}
 
+.navbar-container.invert {
+    background-color: #fff;
 }
 
 .navbar-container.active {
-
-transition: all 0.25s ease-in;
+    transition: all 0.25s ease-in;
 }
 
 .navbar-container img{
@@ -30,4 +28,64 @@ transition: all 0.25s ease-in;
     filter: invert(1);
     transition: all 0.25s ease-in;
 }
+
+.reach-out-button {
+    position: absolute;
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: #fff; 
+    color: black; 
+    border: none; 
+    height: clamp(28px, 3.5vh, 40px); 
+    gap: clamp(6px, 0.8vw, 10px);
+    font-size: clamp(11px, 1vw, 14px); 
+    padding: 0 clamp(8px, 1.2vw, 16px); 
+    border-radius: 5px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    transition: all 0.25s ease-in;
+}
+
+.reach-out-button.invert {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.25s ease-in;
+}
+
+/* Responsive styling for different screen sizes */
+@media (max-width: 768px) {
+    .reach-out-button {
+        height: clamp(24px, 3vh, 36px);
+        font-size: clamp(10px, 0.9vw, 13px);
+        padding: 0 clamp(6px, 1vw, 12px);
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .reach-out-button {
+        height: clamp(32px, 4vh, 48px);
+        gap: clamp(8px, 1vw, 14px);
+        font-size: clamp(13px, 1.1vw, 16px);
+        padding: 0 clamp(12px, 1.5vw, 24px);
+        right: 30px;
+    }
+}
+
+@media (min-width: 2500px) {
+    .reach-out-button {
+        height: clamp(50px, 6vh, 70px);
+        gap: clamp(15px, 1.5vw, 25px);
+        font-size: clamp(18px, 1.5vw, 24px);
+        padding: 0 clamp(24px, 2.5vw, 40px);
+        right: 50px;
+        font-weight: 600;
+        border-radius: 10px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        letter-spacing: 0.5px;
+    }
+}
+
 

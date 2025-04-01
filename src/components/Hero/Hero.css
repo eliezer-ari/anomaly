@@ -349,3 +349,50 @@
     gap: 12px;
   }
 }
+
+/* Extra large screen support */
+@media (min-width: 3000px) {
+  .hero-title {
+    font-size: 7rem;
+  }
+  
+  .hero-description {
+    font-size: 3.5rem;
+    max-width: 1200px;
+  }
+
+  .hero-cta-button {
+    padding: 2.5rem 5rem;
+    font-size: 2.5rem;
+    border-radius: 14px;
+  }
+
+  .testimonials-section {
+    gap: 60px;
+    margin: 8rem;
+    width: 100vw;
+  }
+
+  .testimonial-item {
+    padding: 35px;
+    max-width: 600px;
+    min-width: 500px;
+    border-radius: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .testimonial-author {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .testimonial-link {
+    font-size: 1.6rem;
+    padding: 5px 0;
+  }
+}

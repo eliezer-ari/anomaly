@@ -106,10 +106,10 @@ const HeroSection = () => {
         </h1>
         
         <p className="hero-description">
-          Full-service design & development with a minimalist aesthetic. 
+          Full-service design & development with fast delivery.
         </p>
         
-        <button className="hero-cta-button">
+        <button className="hero-cta-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
           Reach out now
         </button>
         </div>

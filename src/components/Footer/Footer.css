@@ -52,3 +52,20 @@
         text-align: center;
     }
 }
+
+/* For large screens */
+@media screen and (min-width: 2500px) {
+    .footer-container {
+        height: 7rem;
+        margin: 3rem 4rem;
+    }
+    
+    .footer-links {
+        gap: 2rem;
+        font-size: 1.3rem;
+    }
+    
+    .footer-container p {
+        font-size: 1.3rem;
+    }
+}

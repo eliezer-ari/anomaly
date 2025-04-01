@@ -72,6 +72,7 @@ export default function Header() {
   return (
     <div className={isInverted ? "navbar-container invert" : "navbar-container"}>
       <Image src={WhiteLogo} alt="Anomaly Logo"/>
+      <button className={isInverted ? "reach-out-button invert" : "reach-out-button"} onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Contact Us</button>
     </div>
   );
 }

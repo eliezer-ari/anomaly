@@ -1,0 +1,187 @@
+/* You can create this file if you want specific legal page styles */
+
+.contact-container h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.contact-container ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: #333;
+}
+
+.contact-container li {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 3000px) {
+  .contact-container h2 {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-container p, 
+  .contact-container li {
+    font-size: 1.8rem;
+    line-height: 1.6;
+  }
+}
+
+.legal-container {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: clamp(2rem, 5vw, 8rem);
+    min-height: 100vh;
+}
+
+.legal-content {
+    max-width: 900px;
+    width: 90%;
+    margin: 0 auto;
+    color: #333;
+}
+
+.legal-content h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    color: #000;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.8rem;
+}
+
+.legal-content h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+    color: #000;
+}
+
+.legal-content p {
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+.legal-content ul {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    padding-left: 1.8rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+.legal-content strong {
+    font-weight: 600;
+}
+
+.legal-date {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: #666;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    display: block;
+}
+
+.legal-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding-top: clamp(1rem, 2vw, 2rem);
+    border-top: 1px solid #eee;
+}
+
+.legal-nav a {
+    color: #7f7f7f;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    transition: color 0.2s ease;
+}
+
+.legal-nav a:hover {
+    color: #6e6e6e;
+    text-decoration: underline;
+}
+
+.back-to-home {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #7f7f7f;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    transition: color 0.2s ease;
+}
+
+.back-to-home:hover {
+    color: #6e6e6e;
+    text-decoration: underline;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .legal-content {
+        width: 100%;
+    }
+    
+    .legal-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .legal-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Very large screen support */
+@media (min-width: 3000px) {
+    .legal-container {
+        padding: 12rem;
+    }
+    
+    .legal-content {
+        max-width: 1400px;
+    }
+    
+    .legal-content h1 {
+        font-size: 4rem;
+        margin-bottom: 3.5rem;
+    }
+    
+    .legal-content h2 {
+        font-size: 2.5rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .legal-content p,
+    .legal-content li {
+        font-size: 1.8rem;
+        line-height: 1.8;
+        margin-bottom: 1.8rem;
+    }
+    
+    .legal-content ul {
+        margin-bottom: 3rem;
+    }
+    
+    .legal-date {
+        font-size: 1.5rem;
+    }
+    
+    .legal-nav a,
+    .back-to-home {
+        font-size: 1.5rem;
+    }
+} 

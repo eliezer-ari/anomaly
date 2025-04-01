@@ -10,7 +10,13 @@ import './Contact.css'
 export default function Contact(){
     const [state, handleSubmit] = useForm("xqakqebl");
 	if (state.succeeded) {
-		return <p>Thanks for reaching out!</p>;
+		return (
+			<div id='contact' className="standard-container contact">
+				<div className="contact-container">
+					<p className="contact-success-message">Thanks for reaching out!</p>
+				</div>
+			</div>
+		);
 	}
 
     return(
