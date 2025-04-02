@@ -27,7 +27,7 @@ export default function About() {
     useEffect(() => {
         // Check screen size on mount and window resize
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 960);
+            setIsMobile(window.innerWidth < 768);
         };
         
         // Set initial value

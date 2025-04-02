@@ -67,13 +67,14 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: clamp(15px, 2vw, 40px);
-  padding: clamp(2rem, 5vw, 5rem);
+  /* padding: clamp(2rem, 5vw, 5rem); */
   width: auto;
   max-width: 95%;
   max-height: 40vh;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+  margin-top: 5rem;
   margin-bottom: 5rem;
 }
 
