@@ -142,8 +142,9 @@ const HeroSection = () => {
               </p>
               <p className="testimonial-author">
                 — {testimonial.author}
-                ({testimonial.hasYC && (
-                  <span className="yc-logo">
+                {testimonial.hasYC && (
+             <span className="yc-logo">
+                   {"("}
                     <img 
                       src="/images/yc_square.png" 
                       alt="Y Combinator" 
@@ -152,9 +153,9 @@ const HeroSection = () => {
                       style={{ verticalAlign: 'middle', marginBottom: '2px', marginLeft: '2px' }}
                     />
                     {" "}
-                    <span className="yc-batch">{testimonial.ycBatch}</span>
+                    <span className="yc-batch">{testimonial.ycBatch}{")"}</span>     
                   </span>
-                )})
+                )}
               </p>
               <a 
                 href="#"
