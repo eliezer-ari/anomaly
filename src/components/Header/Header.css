@@ -133,7 +133,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 74px 20px;
+    padding: 74px 24px;
     /* padding: 20px; */
     opacity: 0;
     visibility: hidden;
@@ -211,7 +211,13 @@
     margin: 24px 0 0 0;
 }
 
+.mobile-menu-divider.active {
+    background-color: #0000007e;
+}
 
+.mobile-menu-divider.invert {
+    background-color: #ffffff7e;
+}
 /* Original image styles */
 .navbar-container img {
     filter: invert(0);
@@ -273,5 +279,3 @@
         display: none;
     }
 }
-
-

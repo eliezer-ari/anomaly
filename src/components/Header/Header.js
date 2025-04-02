@@ -2,12 +2,52 @@
 import './Header.css';
 import Image from 'next/image';
 import WhiteLogo from '@/../public/anomalylogo.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function Header() {
   const [isInverted, setIsInverted] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Define the prevent scroll handler as a stable function with useCallback
+  const preventScroll = useCallback((e) => {
+    if (menuOpen) {
+      e.preventDefault();
+    }
+  }, [menuOpen]);
+
+  // Toggle menu state only
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Handle scroll blocking in a dedicated effect
+  useEffect(() => {
+    // These options make the event handler capture the event before it bubbles
+    const options = { passive: false, capture: true };
+    
+    if (menuOpen) {
+      // Add all event listeners when menu opens
+      console.log('Adding scroll prevention');
+      window.addEventListener('wheel', preventScroll, options);
+      window.addEventListener('touchmove', preventScroll, options);
+      document.addEventListener('scroll', preventScroll, options);
+    } else {
+      // Remove all event listeners when menu closes
+      console.log('Removing scroll prevention');
+      window.removeEventListener('wheel', preventScroll, options);
+      window.removeEventListener('touchmove', preventScroll, options);
+      document.removeEventListener('scroll', preventScroll, options);
+    }
+    
+    // Clean up on unmount or before next effect run
+    return () => {
+      console.log('Cleanup: removing scroll prevention');
+      window.removeEventListener('wheel', preventScroll, options);
+      window.removeEventListener('touchmove', preventScroll, options);
+      document.removeEventListener('scroll', preventScroll, options);
+    };
+  }, [menuOpen, preventScroll]);
 
   useEffect(() => {
     // Function to check scroll position and update navbar
@@ -87,10 +127,6 @@ export default function Header() {
     return "navbar-container";
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   // Function to handle smooth scrolling with offset
   const scrollToSection = (sectionId, event) => {
     event.preventDefault();
@@ -120,7 +156,10 @@ export default function Header() {
           <li>
             <a 
               href="#services" 
-              onClick={(e) => scrollToSection('services', e)}
+              onClick={(e) => {
+                scrollToSection('services', e);
+                setMenuOpen(false);
+              }}
             >
               Services
             </a>
@@ -147,6 +186,7 @@ export default function Header() {
                   behavior: 'smooth'
                 });
               }
+              setMenuOpen(false);
             }}
           >
             Contact Us
@@ -176,7 +216,7 @@ export default function Header() {
               >
                 Services
               </a>
-              <div className="mobile-menu-divider"></div>
+              <div className={`mobile-menu-divider ${isActive ? "active" : ""} ${isInverted ? "invert" : ""}`}></div>
             </li>
             <li>
               <a 
@@ -188,7 +228,7 @@ export default function Header() {
               >
                 Featured Work
               </a>
-              <div className="mobile-menu-divider"></div>
+              <div className={`mobile-menu-divider ${isActive ? "active" : ""} ${isInverted ? "invert" : ""}`}></div>
             </li>
             <li>
               <button 
