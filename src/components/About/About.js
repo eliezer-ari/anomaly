@@ -1,9 +1,11 @@
 'use client';
 import './About.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function About() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    const [fadeOut, setFadeOut] = useState(false);
     
     const websites = [
         "https://scalacomputing.com",
@@ -11,19 +13,51 @@ export default function About() {
         "https://hotplate.com",
         "https://legal.fynncredit.com/",
     ];
+    
+    // Website thumbnails to use on mobile
+    const websiteThumbnails = [
+        "/images/scala_still.png",
+        "/images/kis_still.png",
+        "/images/hotplate_still.png",
+        "/images/fynn_still.png",
+    ];
+
+    useEffect(() => {
+        // Check screen size on mount and window resize
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 960);
+        };
+        
+        // Set initial value
+        handleResize();
+        
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+        
+        // Clean up
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % websites.length);
+        setFadeOut(true);
+        setTimeout(() => {
+            setCurrentSlide((prev) => (prev + 1) % websites.length);
+            setFadeOut(false);
+        }, 300); // Match this with the CSS transition duration
     };
 
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + websites.length) % websites.length);
+        setFadeOut(true);
+        setTimeout(() => {
+            setCurrentSlide((prev) => (prev - 1 + websites.length) % websites.length);
+            setFadeOut(false);
+        }, 300); // Match this with the CSS transition duration
     };
 
     return (
         <div id='about' className='standard-container about'>
-            <div className='services-inner'>
-                <h1 className='services-title'>Services</h1>
+            <div id='services' className='services-inner'>
+                <h1 className='services-title padding'>Services</h1>
                 <div className='service-item-container'>
                     <div className='service-item'>
                     <div className='service-content'>
@@ -67,16 +101,34 @@ export default function About() {
                             </div> */}
 
                             <div className='carousel'>
-                        <h3 className='past-work-title-1'>Featured Work</h3>
-                            <div className='iframe-container'>
-                                <iframe src={websites[currentSlide]} title="Portfolio example"></iframe>
+                                <h3 id='featured-work' className='services-title'>Featured Work</h3>
+                                <div className='iframe-container'>
+                                    {isMobile ? (
+                                        <a 
+                                            href={websites[currentSlide]} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="thumbnail-link"
+                                        >
+                                            <img 
+                                                src={websiteThumbnails[currentSlide]} 
+                                                alt={`${websites[currentSlide]} screenshot`} 
+                                                className={`website-thumbnail ${fadeOut ? 'fade-out' : 'fade-in'}`}
+                                            />
+                                        </a>
+                                    ) : (
+                                        <iframe 
+                                            src={websites[currentSlide]} 
+                                            title="Portfolio example"
+                                        ></iframe>
+                                    )}
+                                </div>
+                                <div className='carousel-controls'>
+                                    <button onClick={prevSlide}>Previous</button>
+                                    <span>{currentSlide + 1} / {websites.length}</span>
+                                    <button onClick={nextSlide}>Next</button>
+                                </div>
                             </div>
-                            <div className='carousel-controls'>
-                                <button onClick={prevSlide}>Previous</button>
-                                <span>{currentSlide + 1} / {websites.length}</span>
-                                <button onClick={nextSlide}>Next</button>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>

@@ -118,26 +118,43 @@ const HeroSection = () => {
         </div>
         <div className="testimonials-section">
           {[
-            {
-              text: "They delivered our website in record time. Exactly what we needed!",
-              author: "Rishi T., Founder and COO of Hotplate (YC S20)"
-            },
-            {
-              text: "The best design team we've worked with. Period.",
-              author: "Eric M., Founder and CEO of Fynn (YC S19)"
-            },
-            {
-              text: "Professional, creative, and incredibly responsive. Highly recommend!",
-              author: "Blake E., Founder and CEO of KeepItSimple"
-            }
+                  {
+                    text: "They delivered our website in record time. Exactly what we needed!",
+                    author: "Rishi T., Founder and COO of Hotplate ",
+                    hasYC: true,
+                    ycBatch: "S20"
+                  },
+                  {
+                    text: "The best design team we've worked with. Period.",
+                    author: "Eric M., Founder and CEO of Fynn ",
+                    hasYC: true,
+                    ycBatch: "S19"
+                  },
+                  {
+                    text: "Professional, creative, and incredibly responsive. Highly recommend!",
+                    author: "Blake E., Founder and CEO of KeepItSimple"
+                  }
         
           ].map((testimonial, index) => (
             <div key={index} className="testimonial-item">
-              <p className="testimonial-text">
+                           <p className="testimonial-text">
                 "{testimonial.text}"
               </p>
               <p className="testimonial-author">
                 — {testimonial.author}
+                ({testimonial.hasYC && (
+                  <span className="yc-logo">
+                    <img 
+                      src="/images/yc_square.png" 
+                      alt="Y Combinator" 
+                      width="14" 
+                      height="14" 
+                      style={{ verticalAlign: 'middle', marginBottom: '2px', marginLeft: '2px' }}
+                    />
+                    {" "}
+                    <span className="yc-batch">{testimonial.ycBatch}</span>
+                  </span>
+                )})
               </p>
               <a 
                 href="#"
