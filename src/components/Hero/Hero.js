@@ -28,15 +28,16 @@ const HeroSection = () => {
   useEffect(() => {
     if (seed === null) return; // Wait for seed to be set
 
-    // Get viewport dimensions
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-
+    // Get parent dimensions
+    const parent = mountRef.current.parentElement;
+    const parentWidth = parent.clientWidth;
+    const parentHeight = parent.clientHeight;
+    
     // Create the scene, camera, and renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, viewportWidth / viewportHeight, 0.1, 500);
+    const camera = new THREE.PerspectiveCamera(75, parentWidth / parentHeight, 0.1, 500);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(viewportWidth, viewportHeight);
+    renderer.setSize(parentWidth, parentHeight);
     renderer.setClearColor(0x000000, 1); // Black background
     renderer.toneMapping = THREE.ReinhardToneMapping; // Use HDR tone mapping
     mountRef.current.appendChild(renderer.domElement);
@@ -47,7 +48,7 @@ const HeroSection = () => {
     composer.addPass(renderPass);
 
     const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(viewportWidth, viewportHeight),
+      new THREE.Vector2(parentWidth, parentHeight),
       0.1, // Strength
       0.1, // Radius
       0.9  // Threshold
@@ -75,8 +76,10 @@ const HeroSection = () => {
     animate();
 
     const handleResize = () => {
-      const newWidth = window.innerWidth;
-      const newHeight = window.innerHeight;
+      const parent = mountRef.current.parentElement;
+      const newWidth = parent.clientWidth;
+      const newHeight = parent.clientHeight;
+      
       renderer.setSize(newWidth, newHeight);
       composer.setSize(newWidth, newHeight);
       camera.aspect = newWidth / newHeight;
@@ -95,12 +98,12 @@ const HeroSection = () => {
   }, [seed]);
 
   return (
-    <div id="hero" style={{ width: '100vw', minHeight: '100vh', position: 'relative' }}>
-      <div ref={mountRef} style={{ width: '100%', height: '100%' }} />
+    <div id="hero" style={{ width: '100%', height: 'fit-content', position: 'relative' }}>
+      <div ref={mountRef} style={{ width: '100%', height: '100%', position: 'absolute'}} />
       
       {/* Hero Content Overlay */}
-      <div className="hero-overlay">
-        <div className="hero-content">
+      <div className="hero-container">
+        <div className="hero-inner">
         <h1 className="hero-title">
           Web Design for Startups
         </h1>
@@ -113,7 +116,6 @@ const HeroSection = () => {
           Reach out now
         </button>
         </div>
-        {/* Testimonials Section */}
         <div className="testimonials-section">
           {[
             {

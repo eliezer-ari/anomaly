@@ -34,6 +34,8 @@ body {
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-height: 64px;
+  --max-width: 1024px;
 }
 
 html,

@@ -21,6 +21,7 @@ export default function Contact(){
 
     return(
         <div id='contact' className="standard-container contact" >
+			<div className="contact-inner">
             <div className="contact-container">
 			<h1>Contact Us</h1>
 			<p>We'd love to hear from you! Please fill out the form below to get in touch.</p>
@@ -48,8 +49,8 @@ export default function Contact(){
 					</button>
 				</form>
                 </div>
-                
             </div>
+			</div>
         </div>
     )
 }
