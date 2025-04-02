@@ -120,19 +120,19 @@ const HeroSection = () => {
           {[
                   {
                     text: "They delivered our website in record time. Exactly what we needed!",
-                    author: "Rishi T., Founder and COO of Hotplate ",
+                    author: "Rishi T., Founder of Hotplate ",
                     hasYC: true,
                     ycBatch: "S20"
                   },
                   {
                     text: "The best design team we've worked with. Period.",
-                    author: "Eric M., Founder and CEO of Fynn ",
+                    author: "Eric M., Founder of Fynn ",
                     hasYC: true,
                     ycBatch: "S19"
                   },
                   {
                     text: "Professional, creative, and incredibly responsive. Highly recommend!",
-                    author: "Blake E., Founder and CEO of KeepItSimple"
+                    author: "Blake E., Founder of KeepItSimple"
                   }
         
           ].map((testimonial, index) => (

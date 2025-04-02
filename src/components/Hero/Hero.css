@@ -68,8 +68,8 @@
   flex-wrap: wrap;
   gap: clamp(15px, 2vw, 40px);
   /* padding: clamp(2rem, 5vw, 5rem); */
-  width: auto;
-  max-width: 95%;
+  width: var(--max-width);
+  max-width: 100%;
   max-height: 40vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -93,7 +93,7 @@
 
 .testimonial-text {
   color: white;
-  font-size: clamp(0.75rem, 0.8vw + 0.4rem, 1.5rem);
+  font-size: clamp(0.5rem, 0.8vw + 0.3rem, 1rem);
   margin-bottom: clamp(3px, 0.5vw, 10px);
   font-style: italic;
 }
@@ -101,8 +101,8 @@
 .testimonial-author {
   flex-grow: 1;
   color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(0.7rem, 0.6vw + 0.3rem, 1.3rem);
-  margin-bottom: clamp(3px, 0.5vw, 10px);
+  font-size: clamp(0.5rem, 0.6vw + 0.3rem, 0.6rem);
+  margin-bottom: clamp(5px, 1.2vw, 8px);
 }
 
 .testimonial-link {
@@ -115,10 +115,10 @@
 
 /* Medium screen adjustments */
 @media (max-width: 1024px) {
-  .testimonial-item {
+  /* .testimonial-item {
     flex: 1 1 clamp(160px, 23vw, 240px);
-    max-width: clamp(200px, 28vw, 280px);
-  }
+    max-width: clamp(200px, 30vw, 380px);
+  } */
   
   .testimonials-section {
     max-height: 35vh;
