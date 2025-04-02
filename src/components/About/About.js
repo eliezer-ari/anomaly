@@ -1,11 +1,13 @@
 'use client';
 import './About.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function About() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const [fadeOut, setFadeOut] = useState(false);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     
     const websites = [
         "https://scalacomputing.com",
@@ -38,20 +40,65 @@ export default function About() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Effect to handle hiding the overlay after transition completes
+    useEffect(() => {
+        if (!isTransitioning && isVisible) {
+            // Set a timeout to match the transition duration (0.3s)
+            const timer = setTimeout(() => {
+                setIsVisible(false);
+            }, 300);
+            return () => clearTimeout(timer);
+        }
+    }, [isTransitioning, isVisible]);
+
     const nextSlide = () => {
-        setFadeOut(true);
+        // First make the overlay visible
+        setIsVisible(true);
+        
+        // Then start transition (overlay fades in)
         setTimeout(() => {
-            setCurrentSlide((prev) => (prev + 1) % websites.length);
-            setFadeOut(false);
-        }, 300); // Match this with the CSS transition duration
+            setIsTransitioning(true);
+            
+            // Wait for overlay to fully fade in
+            setTimeout(() => {
+                // Change slide
+                setCurrentSlide((prev) => (prev + 1) % websites.length);
+                
+                // Give content time to load before fading out the overlay
+                // Use shorter duration for mobile (images) vs desktop (iframes)
+                const loadTime = isMobile ? 300 : 1000;
+                setTimeout(() => {
+                    // Start fading out overlay
+                    setIsTransitioning(false);
+                    // isVisible will be set to false after animation completes via useEffect
+                }, loadTime);
+            }, 500);
+        }, 20); // Small delay to ensure visibility happens first
     };
 
     const prevSlide = () => {
-        setFadeOut(true);
+        // First make the overlay visible
+        setIsVisible(true);
+        
+        // Then start transition (overlay fades in)
         setTimeout(() => {
-            setCurrentSlide((prev) => (prev - 1 + websites.length) % websites.length);
-            setFadeOut(false);
-        }, 300); // Match this with the CSS transition duration
+            setIsTransitioning(true);
+            
+            // Wait for overlay to fully fade in
+            setTimeout(() => {
+                // Change slide
+                setCurrentSlide((prev) => (prev - 1 + websites.length) % websites.length);
+                
+                // Give content time to load before fading out the overlay
+                // Use shorter duration for mobile (images) vs desktop (iframes)
+                const loadTime = isMobile ? 300 : 1000;
+                setTimeout(() => {
+                    // Start fading out overlay
+                    setIsTransitioning(false);
+                    // isVisible will be set to false after animation completes via useEffect
+                }, loadTime);
+            }, 500);
+        }, 20); // Small delay to ensure visibility happens first
     };
 
     return (
@@ -91,19 +138,24 @@ export default function About() {
                             <p className='service-item-price'>Price: $4,000</p>
                             <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
                         </div>
-                        <div className='service-image'>                            {/* <div className='image-grid'>
-                                <img src="/images/circelogo.png" alt="Logo 1" />
-                                <img src="/images/framelogo.png" alt="Logo 2" />
-                                <img src="/images/judelogo.png" alt="Logo 3" />
-                                <img src="/images/makeadifferencelogo.png" alt="Logo 4" />
-                                <img src="/images/plantedlogo.png" alt="Logo 5" />
-                                <img src="/images/projectomnilogo.png" alt="Logo 6" />
-                            </div> */}
-
-                            <div className='carousel'>
-                                <h3 id='featured-work' className='services-title'>Featured Work</h3>
-                                <div className='iframe-container'>
-                                    {isMobile ? (
+                        <div className='service-image'>
+                            <div className='iframe-container'>
+                                {isMobile ? (
+                                    <div className="thumbnail-container" style={{ position: 'relative' }}>
+                                        <div 
+                                            style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: 0,
+                                                width: '100%',
+                                                height: '100%',
+                                                backgroundColor: 'white',
+                                                opacity: isTransitioning ? 1 : 0,
+                                                visibility: isVisible ? 'visible' : 'hidden',
+                                                transition: 'opacity 0.3s ease',
+                                                zIndex: 5
+                                            }}
+                                        ></div>
                                         <a 
                                             href={websites[currentSlide]} 
                                             target="_blank" 
@@ -113,21 +165,37 @@ export default function About() {
                                             <img 
                                                 src={websiteThumbnails[currentSlide]} 
                                                 alt={`${websites[currentSlide]} screenshot`} 
-                                                className={`website-thumbnail ${fadeOut ? 'fade-out' : 'fade-in'}`}
+                                                className="website-thumbnail"
                                             />
                                         </a>
-                                    ) : (
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div 
+                                            style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: 0,
+                                                width: '100%',
+                                                height: '100%',
+                                                backgroundColor: 'white',
+                                                opacity: isTransitioning ? 1 : 0,
+                                                visibility: isVisible ? 'visible' : 'hidden',
+                                                transition: 'opacity 0.3s ease',
+                                                zIndex: 5
+                                            }}
+                                        ></div>
                                         <iframe 
                                             src={websites[currentSlide]} 
                                             title="Portfolio example"
                                         ></iframe>
-                                    )}
-                                </div>
-                                <div className='carousel-controls'>
-                                    <button onClick={prevSlide}>Previous</button>
-                                    <span>{currentSlide + 1} / {websites.length}</span>
-                                    <button onClick={nextSlide}>Next</button>
-                                </div>
+                                    </>
+                                )}
+                            </div>
+                            <div className='carousel-controls'>
+                                <button onClick={prevSlide}>Previous</button>
+                                <span>{currentSlide + 1} / {websites.length}</span>
+                                <button onClick={nextSlide}>Next</button>
                             </div>
                         </div>
                     </div>

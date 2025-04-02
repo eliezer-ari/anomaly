@@ -57,6 +57,7 @@
 .desktop-nav-links li a {
     color: #fff;
     text-decoration: none;
+    letter-spacing: 0.05rem;
     font-size: 14px;
     transition: all 0.25s ease-in;
 }
