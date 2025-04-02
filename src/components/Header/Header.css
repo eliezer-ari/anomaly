@@ -74,7 +74,7 @@
 .right-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     z-index: 101;
 }
 
@@ -83,8 +83,8 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    width: 18px;
+    height: 12px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -109,7 +109,7 @@
 
 /* Hamburger menu animation when open */
 .hamburger-menu.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(5px) ;
 }
 
 .hamburger-menu.open span:nth-child(2) {
@@ -117,7 +117,7 @@
 }
 
 .hamburger-menu.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-5px);
 }
 
 /* Mobile Menu */
