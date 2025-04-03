@@ -80,6 +80,7 @@
 
 .service-content .service-item-price {
     margin-bottom: 0.75rem;
+    font-style: italic;
 }
 
 .service-image {
@@ -220,7 +221,7 @@
 
 @media (max-width: 960px) {
     .iframe-container {
-        height: 700px;
+        height: 900px;
         width: 100%;
     }
 
@@ -340,7 +341,7 @@
     }
     
     .iframe-container {
-        height: 700px;
+        height: fit-content;
         border-radius: 0;
     }
     
@@ -622,9 +623,6 @@
 }
 
 @media (max-width: 960px) {
-    .iframe-container {
-        height: 400px;
-    }
     
     .website-thumbnail {
         object-fit: contain;

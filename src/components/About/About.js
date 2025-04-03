@@ -111,7 +111,7 @@ export default function About() {
                             <h3>Logo Design</h3>
                             <p>One svg vector logo and one flat logo.</p>
                             <p className='service-item-timeline'>Timeline: 3-4 weeks</p>
-                            <p className='service-item-price'>Price: $2,000</p>
+                            <p className='service-item-price'>Reach out for a custom quote.</p>
                             <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
                         </div>
                         
@@ -123,22 +123,24 @@ export default function About() {
                             <h2>Landing Page Design</h2>
                             <p>Three mockups and two revisions in Figma.</p>
                             <p className='service-item-timeline'>Timeline: 2-3 weeks</p>
-                            <p className='service-item-price'>Price: $2,000</p>
+                            <p className='service-item-price'>Reach out for a custom quote.</p>
                             <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
                         </div>
                         
                     </div>
 
                     <div className='service-item indent'>
-                       
+
                     <div className='service-content'>
                             <h2>Landing Page Development</h2>
                             <p>One landing page with two revisions.</p>
                             <p className='service-item-timeline'>Timeline: 3-4 weeks</p>
-                            <p className='service-item-price'>Price: $4,000</p>
+                            <p className='service-item-price'>Reach out for a custom quote.</p>
                             <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
                         </div>
+                        
                         <div className='service-image'>
+                        <h1 className='services-title'>Featured Work</h1>
                             <div className='iframe-container'>
                                 {isMobile ? (
                                     <div className="thumbnail-container" style={{ position: 'relative' }}>
