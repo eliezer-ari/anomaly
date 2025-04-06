@@ -2,10 +2,10 @@
     background: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: flex-end;    
     flex-direction: row;
     height: 5rem;
-    margin: 2rem 2rem;
+    margin: 2rem 2rem 2rem 2rem;
 }
 
 .footer-links {
@@ -24,6 +24,7 @@
 @media screen and (max-width: 768px) {
     .footer-container {
         flex-direction: column;
+        align-items: center;
         height: auto;
         padding: 1.5rem 0;
         margin: 1rem 1rem;
