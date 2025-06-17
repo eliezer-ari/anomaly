@@ -10,18 +10,19 @@ export default function About() {
     const [isVisible, setIsVisible] = useState(false);
     
     const websites = [
-        "https://scalacomputing.com",
-        "https://keepingitsimple.io/",
         "https://hotplate.com",
         "https://legal.fynncredit.com/",
+        "https://scalacomputing.com",
+        "https://keepingitsimple.io/"
     ];
     
     // Website thumbnails to use on mobile
     const websiteThumbnails = [
-        "/images/scala_still.png",
-        "/images/kis_still.png",
         "/images/hotplate_still.png",
         "/images/fynn_still.png",
+        "/images/scala_still.png",
+        "/images/kis_still.png"
+
     ];
 
     useEffect(() => {
