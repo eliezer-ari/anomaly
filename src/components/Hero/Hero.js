@@ -122,17 +122,20 @@ const HeroSection = () => {
                     text: "They delivered our website in record time. Exactly what we needed!",
                     author: "Rishi T., Founder of Hotplate ",
                     hasYC: true,
-                    ycBatch: "S20"
+                    ycBatch: "S20",
+                    website: "https://hotplate.com"
                   },
                   {
                     text: "The best design team we've worked with. Period.",
                     author: "Eric M., Founder of Fynn ",
                     hasYC: true,
-                    ycBatch: "S19"
+                    ycBatch: "S19",
+                    website: "https://legal.fynncredit.com"
                   },
                   {
                     text: "Professional, creative, and incredibly responsive. Highly recommend!",
-                    author: "Blake E., Founder of KeepItSimple"
+                    author: "Blake E., Founder of KeepItSimple",
+                    website: "https://keepitsimple.com"
                   }
         
           ].map((testimonial, index) => (
@@ -158,8 +161,10 @@ const HeroSection = () => {
                 )}
               </p>
               <a 
-                href="#"
+                href={testimonial.website}
                 className="testimonial-link"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 link to website
               </a>
