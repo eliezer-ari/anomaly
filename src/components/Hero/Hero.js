@@ -104,19 +104,19 @@ const HeroSection = () => {
       {/* Hero Content Overlay */}
       <div className="hero-container">
         <div className="hero-inner">
-        <h1 className="hero-title">
+        {/* <h1 className="hero-title">
           Web Design for Startups
-        </h1>
+        </h1> */}
         
-        <p className="hero-description">
+        {/* <p className="hero-description">
           Full-service design & development with fast delivery.
-        </p>
+        </p> */}
         
-        <button className="hero-cta-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
+        {/* <button className="hero-cta-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
           Reach out now
-        </button>
+        </button> */}
         </div>
-        <div className="testimonials-section">
+        {/* <div className="testimonials-section">
           {[
                   {
                     text: "They delivered our website in record time. Exactly what we needed!",
@@ -170,7 +170,7 @@ const HeroSection = () => {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Move the seed display above testimonials */}
         {seed && (

@@ -30,7 +30,7 @@
     position: relative;
     height: var(--header-height);
     width: 100%;
-    max-width: 1024px;
+    /* max-width: 1024px; */
     padding-left: 24px;
     padding-right: 24px;
     margin-inline: auto;

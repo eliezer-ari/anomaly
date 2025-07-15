@@ -152,7 +152,7 @@ export default function Header() {
           <Image src={WhiteLogo} alt="Anomaly Logo"/>
         </div>
         
-        <ul className="desktop-nav-links">
+        {/* <ul className="desktop-nav-links">
           <li>
             <a 
               href="#services" 
@@ -172,9 +172,9 @@ export default function Header() {
               Featured Work
             </a>
           </li>
-        </ul>
+        </ul> */}
         
-        <div className="right-nav">
+        {/* <div className="right-nav">
           <button 
             className={`reach-out-button ${isActive ? "active" : ""} ${isInverted ? "invert" : ""}`} 
             onClick={() => {
@@ -201,7 +201,7 @@ export default function Header() {
             <span></span>
             <span></span>
           </button>
-        </div>
+        </div> */}
         
         {/* Mobile Menu */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""} ${isActive ? "active" : ""} ${isInverted ? "invert" : ""}`}>
