@@ -113,7 +113,7 @@ export default function About() {
                             <p>One svg vector logo and one flat logo.</p>
                             <p className='service-item-timeline'>Timeline: 3-4 weeks</p>
                             <p className='service-item-price'>Reach out for a custom quote.</p>
-                            <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
+                            {/* <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button> */}
                         </div>
                         
                     </div>
@@ -125,7 +125,7 @@ export default function About() {
                             <p>Three mockups and two revisions in Figma.</p>
                             <p className='service-item-timeline'>Timeline: 2-3 weeks</p>
                             <p className='service-item-price'>Reach out for a custom quote.</p>
-                            <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
+                            {/* <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button> */}
                         </div>
                         
                     </div>
@@ -137,7 +137,7 @@ export default function About() {
                             <p>One landing page with two revisions.</p>
                             <p className='service-item-timeline'>Timeline: 3-4 weeks</p>
                             <p className='service-item-price'>Reach out for a custom quote.</p>
-                            <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button>
+                            {/* <button className="about-reach-out-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Reach out now</button> */}
                         </div>
                         
                         <div className='service-image'>
